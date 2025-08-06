@@ -32,5 +32,5 @@ do {
     checkEven (randomNumber, userInput, status, numberOfCorrectAnswer);
 } while (status === 'true' && i < 2);
 if (numberOfCorrectAnswer === 3) {
-    console.log ('Congratulations, ${name}!');
+    console.log ('Congratulations, Sam!');
 }
