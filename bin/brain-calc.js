@@ -1,17 +1,16 @@
-console.log('What is the result of the expression?\n');
+import readlineSync from  'readline-sync';
+
 const randomNumber = () => {
-    const number = Math.floor(Math.random() * 100);
+    const number = Math.floor(0 + Math.random() * (100 - 0 + 1));
     return number;
-};
-let numberOne = randomNumber();
-let numberTwo = randomNumber();
+}
 const randomOperator = () => {
     const operators = ['+', '-', '*', "/"];
     const randomIndex = Math.floor(Math.random() * operators.length);
     return operators[randomIndex];
-};
+}
 const operCalc = (numberOne, operator, numberTwo) => {
-   let result = 0;
+    let result = 0;
     switch (operator) {
         case '+':
             result = numberOne + numberTwo;
@@ -27,29 +26,29 @@ const operCalc = (numberOne, operator, numberTwo) => {
             break;
     }
     return result;
-};
-let count = 0;
-let answer = true;
-const brainCalc = (count) => {
-    let operator = randomOperator();
-    console.log('Question:'numberOne, operator, numberTwo,\n);
-    let userInput = prompt('Your answer:');
-    console.log(\n);
-    result = operCalc();
-    if (userInput === result) {
-        console.log('Correct!\n');
-        count +=1;
-        answer = true;
-    } else {
-        console.log("'"userInput"' is wrong answer ;(. Correct answer was '"result"'.\n Let's try again, ${naim}!\n");
-        answer = false;
-    }
-    return count, answer;
-};
-while (count < 3 && answer === true) {
-    brainCalc(count);
-};
-if (count === 2) {
-    console.log('Congratulations, ' ${name}'!\n');
 }
 
+function brainCalc () {
+    console.log('Welcome to the Brain Games!');
+    const name = readlineSync.question('May I have your name?');
+    console.log(`Hello, ${name}!`)
+    let count = 3;
+    for (let i = 0; i < count; i +=1) {
+        console.log('What is the result of the expression?\n');
+        let randomNumberOne = randomNumber();
+        let randomNumberTwo = randomNumber();
+        let operator = randomOperator;
+        console.log(`Question: ${randomNumberOne}${operator}${randomNumberTwo}`);
+        const userAnswer = readlineSync.question('Your answer: ');
+        let correctAnswer = operCalc(randomNumberOne; operator; randomNumberTwo); 
+        if (userAnswer === correctAnswer) {
+            console.log(`Correct!`);
+        } else {
+            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+            console.log(`Let's try again, ${name}!`);
+            return;
+        }
+    }
+    console.log(`Congratulations, ${name}!`)
+}
+brainCalc();

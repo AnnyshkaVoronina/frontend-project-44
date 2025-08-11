@@ -1,36 +1,33 @@
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-const randomNumber = Math.floor(Math.random() * 100);
-console.log('Question:', randomNumber);
-let userInput = prompt('Your answer:');
-var i = 0;
-let numberOfCorrectAnswer = 0;
-const checkEven = (randomNumber, userInput, status, numberOfCorrectAnswer) => {
-    if (randomNumber % 2 === 0 && userInput === 'yes') {
-        console.log('Correct!');
-        numberOfCorrectAnswer += 1;
-    }
-    if (randomNumber % 2 != 0 && userInput === 'no') {
-        console.log('Correct!');
-        numberOfCorrectAnswer += 1;
-    } else {
-        if (userInput === 'yes') {
-            console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-        } else {
-            console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-        }
-        status = false;
-        return console.log("Let's try again, ${name}!"), status;
-    }
-    return status, numberOfCorrectAnswer;
-};
+import readlineSync from  'readline-sync';
+const isEven = (num) => num % 2 === 0;
 
-do {
-    const randomNumber = Math.floor(Math.random() * 100);
-    console.log('Question:', randomNumber);
-    let userInput = prompt('Your answer:');
-    let status = true;
-    checkEven (randomNumber, userInput, status, numberOfCorrectAnswer);
-} while (status === 'true' && i < 2);
-if (numberOfCorrectAnswer === 3) {
-    console.log ('Congratulations, Sam!');
+function evenGame() {
+  console.log('Welcome to the Brain Games!');
+
+  const name = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${name}!`);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+  let count = 3;
+
+  for(let i = 0; i < count; i++) {
+    const randomNumber = Math.floor(0 + Math.random() * (100 - 0 + 1));
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    const currentAnswer = isEven(randomNumber) ? 'yes' : 'no';
+    
+    if (currentAnswer === userAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${currentAnswer}'. Let's try again, ${name}!`);
+
+      return;
+    }
+  }
+
+  console.log(`Congratulations, ${name}!`);
 }
+
+evenGame();
