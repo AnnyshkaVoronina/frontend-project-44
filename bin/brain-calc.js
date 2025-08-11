@@ -40,7 +40,7 @@ function brainCalc () {
         let operator = randomOperator;
         console.log(`Question: ${randomNumberOne}${operator}${randomNumberTwo}`);
         const userAnswer = readlineSync.question('Your answer: ');
-        let correctAnswer = operCalc(randomNumberOne; operator; randomNumberTwo); 
+        let correctAnswer = operCalc(randomNumberOne, operator, randomNumberTwo); 
         if (userAnswer === correctAnswer) {
             console.log(`Correct!`);
         } else {

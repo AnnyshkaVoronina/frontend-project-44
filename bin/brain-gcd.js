@@ -15,7 +15,7 @@ const GCD = (a, b) => {
     }
     return a;
 }
-function brainGCD {
+function brainGCD () {
     console.log('Welcome to the Brain Games!');
     const name = readlineSync.question('May I have your name?');
     console.log(`Hello, ${name}!`)
@@ -24,7 +24,7 @@ function brainGCD {
     for (let i = 0; i < count; i += 1) {
         const randomNumberOne = randomNumber();
         const randomNumberTwo = randomNumber();
-        consple.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
+        console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
         const userAnswer = readlineSync.question(`Your answer: `);
         const currentAnswer = GCD(randomNumberOne, randomNumberTwo);
         if (userAnswer === currentAnswer) {
