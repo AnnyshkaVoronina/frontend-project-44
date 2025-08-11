@@ -13,9 +13,9 @@ function brainProgression() {
         let elements = [];
         const min = 5;
         const max = 10;
-        const countElements = Math.random() * (max - min) + min;
-        elements[0] = Math.random() * (100 - 1) + 1;
-        const step = Math.random() * (100 - 1) + 1;
+        const countElements = Math.floor(Math.random() * (max - min) + min);
+        elements[0] = Math.floor(Math.random() * (100 - 1) + 1);
+        const step = Math.floor(Math.random() * (100 - 1) + 1);
         for (let n = 1; n < countElements; n += 1) {
             elements[n] = element(elements[0], n, step);
         }

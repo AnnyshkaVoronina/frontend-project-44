@@ -25,7 +25,7 @@ function brainGCD () {
         const randomNumberOne = randomNumber();
         const randomNumberTwo = randomNumber();
         console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
-        const userAnswer = readlineSync.question(`Your answer: `);
+        const userAnswer = readlineSync.question(`Your answer:`);
         const currentAnswer = GCD(randomNumberOne, randomNumberTwo);
         if (userAnswer === currentAnswer) {
             console.log(`Correct!`);
