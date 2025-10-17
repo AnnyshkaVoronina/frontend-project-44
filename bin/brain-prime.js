@@ -35,7 +35,7 @@ function brainPrime () {
         let randomNumber = randomNumber();
         console.log(`Question: ${randomNumber}`);
         const userAnswer = readlineSync.question('Your answer: ');
-        if (userAnswer === "yes" && correctAnswer === true or userAnswer === "no" && correctAnswer === false) {
+        if (userAnswer === "yes" && correctAnswer === true || userAnswer === "no" && correctAnswer === false) {
             console.log(`Correct!`);
         } else {
             console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
